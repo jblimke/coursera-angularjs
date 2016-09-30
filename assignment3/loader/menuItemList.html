@@ -1,0 +1,8 @@
+<h3>{{ list.myTitle }}</h3>
+<ol>
+  <li ng-repeat="menuItem in list.found">
+    {{ menuItem.name }},  &nbsp; &nbsp;   {{ menuItem.shortName }},  &nbsp; &nbsp;   {{ menuItem.description }}
+    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+  </li>
+</ol>
+<div class="error" ng-if="list.menuItemsInList()">Nothing found</div>
