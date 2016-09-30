@@ -57,7 +57,7 @@ function NarrowItDownController($timeout, MenuSearchService) {
     });
     $timeout(function() {
       list.showNothingFound = true;
-    }, 1000)
+    }, 2000)
   };
 
   list.title = showMenuTitle();
