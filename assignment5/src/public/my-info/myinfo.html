@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="css/registration.css">
+<div class="container">
+  <div class="row" ng-show="myinfoCtlr.hasCustomerRegistered">
+    <!-- <div class="col-md-6"> -->
+      <ul>
+        <li>
+          <span>First Name: {{myinfoCtlr.customer.firstName}}</span>
+        </li>
+        <li>
+          <span>Last Name: {{myinfoCtlr.customer.lastName}}</span>
+        </li>
+        <li>
+          <span>Email Address: {{myinfoCtlr.customer.email}}</span>
+        </li>
+        <li>
+          <span>Phone Number: {{myinfoCtlr.customer.phone}}</span>
+        </li>
+      </ul>
+    <!-- </div>
+    <div class="col-md-6"> -->
+      <menu-item menu-item="myinfoCtlr.menuItem">Oops! The component is not working!</menu-item>
+    </div>
+  </div>
+</div>
+<div>
+<div ng-hide="myinfoCtlr.hasCustomerRegistered">
+  <div>Not Signed Up Yet.</div>
+  <div><a ui-sref="public.signup" class="pull-left">
+    Sign up Now!
+  </a></div>
+</div>

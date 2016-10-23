@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="css/registration.css">
+<fieldset>
+  <legend>Registration</legend>
+  <form name='signupForm' novalidate>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <span>Enter Your First Name:</span>
+        </div>
+
+        <div class="col-md-3">
+          <input type="text" name="firstName" placeholder="First Name"
+            ng-model="signupCtlr.customer.firstName"
+            required
+            minlength="1">
+        </div>
+        <div class="col-md-5">
+          <span ng-if="(signupForm.firstName.$error.minlength
+                        || signupForm.firstName.$error.required)
+                        && (signupForm.firstName.$touched || signupCtlr.invalid)">
+            Please enter your first name!
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <span>Enter Your Last Name:</span>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="lastName" placeholder="Last Name"
+            ng-model="signupCtlr.customer.lastName"
+            required
+            minlength="1">
+        </div>
+        <div class="col-md-5">
+          <span ng-if="(signupForm.lastName.$error.minlength
+                        || signupForm.lastName.$error.required)
+                        && (signupForm.lastName.$touched || signupCtlr.invalid)">
+            Please enter your last name!
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <span>Enter Your Email Address:</span>
+        </div>
+        <div class="col-md-3">
+          <input type="email" name="email" placeholder="Email"
+            ng-model="signupCtlr.customer.email"
+            required>
+        </div>
+        <div class="col-md-5">
+          <span ng-if="(signupForm.email.$invalid
+                      || signupForm.email.$error.required)
+                      && (signupForm.email.$touched || signupCtlr.invalid)">
+            Your email address should be in this format: handle@domain
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <span>Enter Your Phone Number:</span>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="phone" placeholder="Phone ###-###-####"
+            required
+            ng-model="signupCtlr.customer.phone"
+            pattern="(\d{3})-(\d{3})-(\d{4})">
+        </div>
+        <div class="col-md-5">
+          <span ng-if="(signupForm.phone.$invalid
+                      || signupForm.phone.$error.required)
+                      && (signupForm.phone.$touched || signupCtlr.invalid)">
+            Phone must be in the format ###-###-####.
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <span>Enter Menu Number of Favorite Dish*:</span>
+        </div>
+        <div class="col-md-3">
+          <input type="text" name="menuNumber" placeholder="Menu Number"
+            ng-model="signupCtlr.customer.menuNumber">
+        </div>
+        <div class="col-md-5">
+          <span ng-hide="signupCtlr.isMenuItemExisted">
+            No such menu number exists!
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <span>After you enter, click this Submit button:</span>
+        </div>
+        <div class="col-md-3">
+          <button ng-click="signupCtlr.submit(signupForm.$invalid)">Submit</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <span>To clear the entries, click this Clear button:</span>
+        </div>
+        <div class="col-md-3">
+          <button ng-click="signupCtlr.clearEntries()">Clear</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-center">
+          <div style="margin-top: 10px;">
+            {{ signupCtlr.infoSaved }}
+          </div
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-left">
+          <div style="margin-top: 10px;">
+            <span>
+              *To find your favorite dish, click the 'Menu' icon at top and then <br>
+              click an image to choose a category. When you find your favorite disk, <br>
+              look for the menu name on the green box at the lower right corner of <br>
+              the image. Enter the menu name.
+            </span>
+          </div
+        </div>
+      </div>
+    </div>
+  </form>
+</fieldset>

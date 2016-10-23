@@ -1,0 +1,14 @@
+legend {
+    color: white;
+    display: block;
+    border-width: initial;
+    border-color: 2px solid white;    /*border-image: initial;*/
+}
+
+input {
+  color: black;
+}
+
+button {
+  background-color: black;
+}
