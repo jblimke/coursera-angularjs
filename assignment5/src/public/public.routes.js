@@ -62,10 +62,6 @@ function routeConfig ($stateProvider) {
         regService: ['RegistrationServiceFactory', function(RegistrationServiceFactory) {
           var regService = RegistrationServiceFactory();
           return regService;
-        }],
-        selectedMenuItem: ['RegistrationServiceFactory', function(RegistrationServiceFactory) {
-          var regService = RegistrationServiceFactory();
-          return regService.getMenuItem();
         }]
       }
     });
