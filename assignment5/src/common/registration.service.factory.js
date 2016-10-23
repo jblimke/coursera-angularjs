@@ -48,7 +48,7 @@
     try {
       return $http({
         method: "GET",
-        url: ('http://jblimke-coursera5a.herokuapp.com/menu_items/' + shortName + '.json')
+        url: ('https://jblimke-coursera5a.herokuapp.com/menu_items/' + shortName + '.json')
       }).then(function(response) {
          return response.data;
        }).catch(function (error) {
